@@ -1,29 +1,24 @@
 package com.aem.nikecmsassignment.core.services;
 
 import com.day.cq.dam.api.Asset;
+import com.google.gson.*;
+import org.apache.commons.collections.map.SingletonMap;
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang3.StringUtils;
-import org.apache.http.HttpStatus;
-import org.apache.http.client.methods.CloseableHttpResponse;
-import org.apache.http.client.methods.HttpPost;
-import org.apache.http.entity.StringEntity;
-import org.apache.http.impl.client.CloseableHttpClient;
-import org.apache.http.impl.client.HttpClients;
-import org.apache.http.util.EntityUtils;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ResourceResolver;
 import org.apache.sling.api.resource.ResourceUtil;
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
+import org.apache.sling.graphql.api.engine.QueryExecutor;
 import org.osgi.service.component.annotations.Component;
+import org.osgi.service.component.annotations.Reference;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
+import java.util.Map;
 
 @Component(service = FetchHeaderDetailsService.class)
 public class FetchHeaderDetailsServiceImpl implements FetchHeaderDetailsService {
@@ -37,40 +32,25 @@ public class FetchHeaderDetailsServiceImpl implements FetchHeaderDetailsService 
     public static final String AUTHORIZATION = "Authorization";
     public static final String BASIC_AUTH = "Basic YWRtaW46YWRtaW4=";
 
+    @Reference
+    private QueryExecutor queryExecutor;
+
+
     @Override
     public String getHeaderData(SlingHttpServletRequest request) {
         try (ResourceResolver resourceResolver = request.getResourceResolver()) {
             String query = getQueryData(resourceResolver);
+            Resource resource = resourceResolver.getResource("/content/cq:graphql/global/endpoint");
             if (StringUtils.isNotEmpty(query)) {
-                return executeHttpRequest(query);
+                Map<String, Object> executorResponse = queryExecutor.execute(query,new SingletonMap(), resource, new String[0]);
+                Gson gson = new GsonBuilder().setPrettyPrinting().create();
+                JsonElement response =  gson.toJsonTree(executorResponse);
+
+                return addLocalesInfo(response);
             }
             return StringUtils.EMPTY;
         }
     }
-    private String executeHttpRequest(String query) {
-        try (CloseableHttpClient httpClient = HttpClients.createDefault()) {
-            HttpPost httpPost = new HttpPost(ENDPOINT_PATH);
-            httpPost.setHeader(CONTENT_TYPE, APPLICATION_JSON);
-            httpPost.setHeader(AUTHORIZATION, BASIC_AUTH);
-            StringEntity entity = new StringEntity(query);
-            httpPost.setEntity(entity);
-
-            try (CloseableHttpResponse httpResponse = httpClient.execute(httpPost)) {
-                int statusCode = httpResponse.getStatusLine().getStatusCode();
-                if (statusCode == HttpStatus.SC_OK) {
-                    String responseString = EntityUtils.toString(httpResponse.getEntity(), StandardCharsets.UTF_8);
-                    return addLocalesInfo(responseString);
-                } else {
-                    log.error("Error in query response: {}", EntityUtils.toString(httpResponse.getEntity(), StandardCharsets.UTF_8));
-                    return "Error in query response: " + statusCode;
-                }
-            }
-        } catch (IOException e) {
-            log.error("Error executing HTTP request: {}", e.getMessage());
-            return "Error executing HTTP request";
-        }
-    }
-
     private String getQueryData(ResourceResolver resourceResolver) {
         Resource resource = resourceResolver.getResource(QUERY_RESOURCE);
         if (!ResourceUtil.isNonExistingResource(resource)) {
@@ -91,12 +71,12 @@ public class FetchHeaderDetailsServiceImpl implements FetchHeaderDetailsService 
         return StringUtils.EMPTY;
     }
 
-    private String addLocalesInfo(String responseString) {
+    private String addLocalesInfo(JsonElement responseElement) {
         try {
-            JSONObject responseObject = new JSONObject(responseString);
-            JSONObject dataObject = responseObject.getJSONObject("data");
-            JSONObject nikeHeaderListObject = dataObject.getJSONObject("nikeHeaderList");
-            JSONArray itemsArray = nikeHeaderListObject.getJSONArray("items");
+            JsonObject responseObject = responseElement.getAsJsonObject();
+            JsonObject dataObject = responseObject.getAsJsonObject("data");
+            JsonObject nikeHeaderListObject = dataObject.getAsJsonObject("nikeHeaderList");
+            JsonArray itemsArray = nikeHeaderListObject.getAsJsonArray("items");
 
             String locale = extractLocale(itemsArray);
             String isoLanguageCode = locale.split("_")[0];
@@ -105,30 +85,35 @@ public class FetchHeaderDetailsServiceImpl implements FetchHeaderDetailsService 
             addLocaleInfoToHeaderFields(itemsArray, locale, isoLanguageCode, isoCountryCode);
 
             return responseObject.toString();
-        } catch (JSONException e) {
-            log.error("Error when adding locales");
+        } catch (Exception e) {
+            log.error("Error when adding locales", e);
             return StringUtils.EMPTY;
         }
     }
 
-    private String extractLocale(JSONArray itemsArray) throws JSONException {
-        JSONObject pathObject = itemsArray.getJSONObject(0);
-        String path = pathObject.getString("_path");
+    private String extractLocale(JsonArray itemsArray) {
+        JsonObject pathObject = itemsArray.get(0).getAsJsonObject();
+        String path = pathObject.get("_path").getAsString();
         String[] pathParts = path.split("/");
         return pathParts[pathParts.length - 2];
     }
 
-    private void addLocaleInfoToHeaderFields(JSONArray itemsArray, String locale, String isoLanguageCode, String isoCountryCode) throws JSONException {
-        for (int i = 0; i < itemsArray.length(); i++) {
-            JSONObject itemObject = itemsArray.getJSONObject(i);
-            JSONArray headerFieldsArray = itemObject.getJSONArray("headerFields");
-            JSONObject headerObject = new JSONObject();
-            headerObject.put("locale", locale);
-            headerObject.put("isoLanguageCode", isoLanguageCode);
-            headerObject.put("isoCountryCode", isoCountryCode);
-            headerFieldsArray.put(0, headerObject);
+    private void addLocaleInfoToHeaderFields(JsonArray itemsArray, String locale, String isoLanguageCode, String isoCountryCode) {
+        for (JsonElement item : itemsArray) {
+            JsonObject itemObject = item.getAsJsonObject();
+            JsonArray headerFieldsArray = itemObject.getAsJsonArray("headerFields");
+            JsonArray newHeaderFieldsArray = new JsonArray();
+            JsonObject headerObject = new JsonObject();
+            headerObject.addProperty("locale", locale);
+            headerObject.addProperty("isoLanguageCode", isoLanguageCode);
+            headerObject.addProperty("isoCountryCode", isoCountryCode);
+            newHeaderFieldsArray.add(headerObject);
+            for (JsonElement headerField : headerFieldsArray) {
+                newHeaderFieldsArray.add(headerField);
+            }
+            itemObject.add("headerFields", newHeaderFieldsArray);
         }
     }
-}
 
+}
 
