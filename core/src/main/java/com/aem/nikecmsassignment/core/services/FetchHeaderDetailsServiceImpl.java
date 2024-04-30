@@ -5,8 +5,8 @@ import com.google.gson.*;
 import org.apache.commons.collections.map.SingletonMap;
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang3.StringUtils;
-import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.resource.Resource;
+import org.apache.sling.api.resource.ResourceNotFoundException;
 import org.apache.sling.api.resource.ResourceResolver;
 import org.apache.sling.api.resource.ResourceUtil;
 import org.apache.sling.graphql.api.engine.QueryExecutor;
@@ -33,20 +33,20 @@ public class FetchHeaderDetailsServiceImpl implements FetchHeaderDetailsService 
 
 
     @Override
-    public String getHeaderData(SlingHttpServletRequest request) {
-        try (ResourceResolver resourceResolver = request.getResourceResolver()) {
+    public String getHeaderData(ResourceResolver resourceResolver) {
             String query = getQueryData(resourceResolver);
-            Resource resource = resourceResolver.getResource(GLOBAL_ENDPOINT);
             if (StringUtils.isNotEmpty(query)) {
+                Resource resource = resourceResolver.getResource(GLOBAL_ENDPOINT);
                 Map<String, Object> executorResponse = queryExecutor.execute(query,new SingletonMap(), resource, new String[0]);
                 Gson gson = new GsonBuilder().setPrettyPrinting().create();
                 JsonElement response =  gson.toJsonTree(executorResponse);
 
                 return addLocalesInfo(response);
+            } else {
+                throw new ResourceNotFoundException("Get Empty query");
             }
-            return StringUtils.EMPTY;
         }
-    }
+
     private String getQueryData(ResourceResolver resourceResolver) {
         Resource resource = resourceResolver.getResource(QUERY_RESOURCE);
         if (!ResourceUtil.isNonExistingResource(resource)) {
@@ -59,16 +59,15 @@ public class FetchHeaderDetailsServiceImpl implements FetchHeaderDetailsService 
                     log.error("Error reading query resource: {}", e.getMessage());
                 }
             } else {
-                log.error("Query resource is not found");
+                log.warn("Query resource is not found");
             }
         } else {
-            log.error("Resource or asset is null");
+            log.warn("Resource or asset is null");
         }
         return StringUtils.EMPTY;
     }
 
     private String addLocalesInfo(JsonElement responseElement) {
-        try {
             JsonObject responseObject = responseElement.getAsJsonObject();
             JsonObject dataObject = responseObject.getAsJsonObject("data");
             JsonObject nikeHeaderListObject = dataObject.getAsJsonObject("nikeHeaderList");
@@ -81,10 +80,6 @@ public class FetchHeaderDetailsServiceImpl implements FetchHeaderDetailsService 
             addLocaleInfoToHeaderFields(itemsArray, locale, isoLanguageCode, isoCountryCode);
 
             return responseObject.toString();
-        } catch (Exception e) {
-            log.error("Error when adding locales", e);
-            return StringUtils.EMPTY;
-        }
     }
 
     private String extractLocale(JsonArray itemsArray) {

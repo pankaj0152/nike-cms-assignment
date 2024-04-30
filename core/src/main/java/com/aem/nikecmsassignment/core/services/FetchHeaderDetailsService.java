@@ -1,7 +1,7 @@
 package com.aem.nikecmsassignment.core.services;
 
-import org.apache.sling.api.SlingHttpServletRequest;
+import org.apache.sling.api.resource.ResourceResolver;
 
 public interface FetchHeaderDetailsService {
-   String getHeaderData(SlingHttpServletRequest request);
+   String getHeaderData(ResourceResolver resolver);
 }
