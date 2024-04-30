@@ -26,11 +26,7 @@ public class FetchHeaderDetailsServiceImpl implements FetchHeaderDetailsService 
     private static final Logger log = LoggerFactory.getLogger(FetchHeaderDetailsService.class);
 
     public static final String QUERY_RESOURCE = "/content/dam/NikeCMSAssignment/queries/headerQuery";
-    public static final String ENDPOINT_PATH = "http://localhost:4502/content/_cq_graphql/global/endpoint.json";
-    public static final String CONTENT_TYPE = "Content-Type";
-    public static final String APPLICATION_JSON = "application/json";
-    public static final String AUTHORIZATION = "Authorization";
-    public static final String BASIC_AUTH = "Basic YWRtaW46YWRtaW4=";
+    public static final String GLOBAL_ENDPOINT = "/content/cq:graphql/global/endpoint";
 
     @Reference
     private QueryExecutor queryExecutor;
@@ -40,7 +36,7 @@ public class FetchHeaderDetailsServiceImpl implements FetchHeaderDetailsService 
     public String getHeaderData(SlingHttpServletRequest request) {
         try (ResourceResolver resourceResolver = request.getResourceResolver()) {
             String query = getQueryData(resourceResolver);
-            Resource resource = resourceResolver.getResource("/content/cq:graphql/global/endpoint");
+            Resource resource = resourceResolver.getResource(GLOBAL_ENDPOINT);
             if (StringUtils.isNotEmpty(query)) {
                 Map<String, Object> executorResponse = queryExecutor.execute(query,new SingletonMap(), resource, new String[0]);
                 Gson gson = new GsonBuilder().setPrettyPrinting().create();
