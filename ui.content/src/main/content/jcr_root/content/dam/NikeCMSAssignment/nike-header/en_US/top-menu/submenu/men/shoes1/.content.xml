@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:dam="http://www.day.com/dam/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:isCheckedOut="{Boolean}true"
+    jcr:mixinTypes="[mix:referenceable,mix:versionable]"
+    jcr:primaryType="dam:Asset"
+    jcr:uuid="33c8375d-7b0d-4419-9535-624fe7d362e5">
+    <jcr:content
+        cq:name="shoes1"
+        cq:parentPath="/content/dam/NikeCMSAssignment/nike-header/en_US/top-menu/submenu/men"
+        jcr:lastModified="{Date}2024-04-30T07:30:20.043+05:30"
+        jcr:lastModifiedBy="admin"
+        jcr:primaryType="dam:AssetContent"
+        jcr:title="Shoes"
+        contentFragment="{Boolean}true"
+        lastFragmentSave="{Date}2024-04-30T07:30:20.043+05:30">
+        <data
+            cq:model="/conf/NikeCMSAssignment/settings/dam/cfm/models/submenu"
+            jcr:primaryType="nt:unstructured">
+            <master
+                jcr:mixinTypes="[cq:Taggable,dam:cfVariationNode]"
+                jcr:primaryType="nt:unstructured"
+                submenuFields="[/content/dam/NikeCMSAssignment/nike-header/en_US/top-menu/submenu/men/shoes/all-shoes,/content/dam/NikeCMSAssignment/nike-header/en_US/top-menu/submenu/men/shoes/jordan,/content/dam/NikeCMSAssignment/nike-header/en_US/top-menu/submenu/men/shoes/lifestyle,/content/dam/NikeCMSAssignment/nike-header/en_US/top-menu/submenu/men/shoes/newest-sneaker,/content/dam/NikeCMSAssignment/nike-header/en_US/top-menu/submenu/men/shoes/running]"
+                submenuFields_x0040_LastModified="{Date}2024-04-30T07:30:20.029+05:30"
+                submenuTitle="Shoes"
+                submenuTitle_x0040_LastModified="{Date}2024-04-29T11:15:00.728+05:30"/>
+        </data>
+        <metadata
+            jcr:mixinTypes="[cq:Taggable]"
+            jcr:primaryType="nt:unstructured"/>
+        <related jcr:primaryType="nt:unstructured"/>
+    </jcr:content>
+</jcr:root>

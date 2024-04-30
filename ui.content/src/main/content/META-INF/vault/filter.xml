@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspaceFilter version="1.0">
+    <filter root="/conf/NikeCMSAssignment" mode="merge"/>
+    <filter root="/content/NikeCMSAssignment" mode="merge"/>
+    <filter root="/content/dam/NikeCMSAssignment" mode="merge"/>
+    <filter root="/content/experience-fragments/NikeCMSAssignment" mode="merge"/>
+</workspaceFilter>

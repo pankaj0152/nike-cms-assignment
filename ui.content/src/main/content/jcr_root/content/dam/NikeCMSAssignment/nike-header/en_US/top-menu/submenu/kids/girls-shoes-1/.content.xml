@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:dam="http://www.day.com/dam/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:isCheckedOut="{Boolean}true"
+    jcr:mixinTypes="[mix:referenceable,mix:versionable]"
+    jcr:primaryType="dam:Asset"
+    jcr:uuid="6231a2dc-9b06-45fd-a515-a1d92c03fc0c">
+    <jcr:content
+        cq:name="girls-shoes-1"
+        cq:parentPath="/content/dam/NikeCMSAssignment/nike-header/en_US/top-menu/submenu/kids"
+        jcr:lastModified="{Date}2024-04-30T07:45:06.874+05:30"
+        jcr:lastModifiedBy="admin"
+        jcr:primaryType="dam:AssetContent"
+        jcr:title="Girls Shoes"
+        contentFragment="{Boolean}true"
+        lastFragmentSave="{Date}2024-04-30T07:45:06.874+05:30">
+        <data
+            cq:model="/conf/NikeCMSAssignment/settings/dam/cfm/models/submenu"
+            jcr:primaryType="nt:unstructured">
+            <master
+                jcr:mixinTypes="[cq:Taggable,dam:cfVariationNode]"
+                jcr:primaryType="nt:unstructured"
+                submenuFields="[/content/dam/NikeCMSAssignment/nike-header/en_US/top-menu/submenu/kids/girls-shoes/all-shoes,/content/dam/NikeCMSAssignment/nike-header/en_US/top-menu/submenu/kids/girls-shoes/older-girls,/content/dam/NikeCMSAssignment/nike-header/en_US/top-menu/submenu/kids/girls-shoes/younger-girls,/content/dam/NikeCMSAssignment/nike-header/en_US/top-menu/submenu/kids/girls-shoes/jordan,/content/dam/NikeCMSAssignment/nike-header/en_US/top-menu/submenu/kids/girls-shoes/lifestyle,/content/dam/NikeCMSAssignment/nike-header/en_US/top-menu/submenu/kids/girls-shoes/newest-sneaker,/content/dam/NikeCMSAssignment/nike-header/en_US/top-menu/submenu/kids/girls-shoes/running]"
+                submenuFields_x0040_LastModified="{Date}2024-04-30T07:45:06.853+05:30"
+                submenuTitle="Girls' Shoes"
+                submenuTitle_x0040_LastModified="{Date}2024-04-30T07:45:06.853+05:30"/>
+        </data>
+        <metadata
+            jcr:mixinTypes="[cq:Taggable]"
+            jcr:primaryType="nt:unstructured"/>
+        <related jcr:primaryType="nt:unstructured"/>
+    </jcr:content>
+</jcr:root>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:dam="http://www.day.com/dam/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:isCheckedOut="{Boolean}true"
+    jcr:mixinTypes="[mix:referenceable,mix:versionable]"
+    jcr:primaryType="dam:Asset"
+    jcr:uuid="babaee06-0928-4674-8253-dbf8290e43c2">
+    <jcr:content
+        cq:name="air-force-1"
+        cq:parentPath="/content/dam/NikeCMSAssignment/nike-header/en_US/top-menu/submenu/links/shop-icons"
+        jcr:lastModified="{Date}2024-04-29T19:19:08.567+05:30"
+        jcr:lastModifiedBy="admin"
+        jcr:primaryType="dam:AssetContent"
+        jcr:title="Air Force 1"
+        contentFragment="{Boolean}true"
+        lastFragmentSave="{Date}2024-04-29T19:19:08.567+05:30">
+        <data
+            cq:model="/conf/NikeCMSAssignment/settings/dam/cfm/models/links-model"
+            jcr:primaryType="nt:unstructured">
+            <master
+                jcr:mixinTypes="[cq:Taggable,dam:cfVariationNode]"
+                jcr:primaryType="nt:unstructured"
+                linksPath="/air/force/1"
+                linksPath_x0040_LastModified="{Date}2024-04-29T19:19:08.541+05:30"
+                linksTitle="Air Force 1"
+                linksTitle_x0040_LastModified="{Date}2024-04-29T19:19:08.541+05:30"/>
+        </data>
+        <metadata
+            jcr:mixinTypes="[cq:Taggable]"
+            jcr:primaryType="nt:unstructured"/>
+        <related jcr:primaryType="nt:unstructured"/>
+    </jcr:content>
+</jcr:root>

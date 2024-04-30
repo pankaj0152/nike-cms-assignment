@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:dam="http://www.day.com/dam/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:isCheckedOut="{Boolean}true"
+    jcr:mixinTypes="[mix:referenceable,mix:versionable]"
+    jcr:primaryType="dam:Asset"
+    jcr:uuid="207c019a-8907-49dd-84e7-1ac946ebbf00">
+    <jcr:content
+        cq:name="new-releases"
+        cq:parentPath="/content/dam/NikeCMSAssignment/nike-header/en_US/top-menu/submenu/men/featured"
+        jcr:lastModified="{Date}2024-04-30T08:45:00.519+05:30"
+        jcr:lastModifiedBy="admin"
+        jcr:primaryType="dam:AssetContent"
+        jcr:title="New Releases"
+        contentFragment="{Boolean}true"
+        lastFragmentSave="{Date}2024-04-30T08:45:00.519+05:30">
+        <data
+            cq:model="/conf/NikeCMSAssignment/settings/dam/cfm/models/links-model"
+            jcr:primaryType="nt:unstructured">
+            <master
+                jcr:mixinTypes="[cq:Taggable,dam:cfVariationNode]"
+                jcr:primaryType="nt:unstructured"
+                linksPath="/new/releases"
+                linksPath_x0040_LastModified="{Date}2024-04-30T08:45:00.495+05:30"
+                linksTitle="New Releases"
+                linksTitle_x0040_LastModified="{Date}2024-04-30T08:45:00.495+05:30"/>
+        </data>
+        <metadata
+            jcr:mixinTypes="[cq:Taggable]"
+            jcr:primaryType="nt:unstructured"/>
+        <related jcr:primaryType="nt:unstructured"/>
+    </jcr:content>
+</jcr:root>

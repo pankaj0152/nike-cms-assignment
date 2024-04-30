@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspaceFilter version="1.0">
+    <filter root="/apps/NikeCMSAssignment/clientlibs"/>
+    <filter root="/apps/NikeCMSAssignment/components"/>
+    <filter root="/apps/NikeCMSAssignment/i18n"/>
+</workspaceFilter>

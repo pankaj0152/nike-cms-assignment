@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:dam="http://www.day.com/dam/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:isCheckedOut="{Boolean}true"
+    jcr:mixinTypes="[mix:referenceable,mix:versionable]"
+    jcr:primaryType="dam:Asset"
+    jcr:uuid="44a68205-a067-42c6-a1b1-0a0c618a333b">
+    <jcr:content
+        cq:name="sale"
+        cq:parentPath="/content/dam/NikeCMSAssignment/nike-header/en_US/top-menu"
+        jcr:lastModified="{Date}2024-04-30T08:01:16.840+05:30"
+        jcr:lastModifiedBy="admin"
+        jcr:primaryType="dam:AssetContent"
+        jcr:title="Sale"
+        contentFragment="{Boolean}true"
+        lastFragmentSave="{Date}2024-04-30T08:01:16.840+05:30">
+        <data
+            cq:model="/conf/NikeCMSAssignment/settings/dam/cfm/models/top-menu-fields"
+            jcr:primaryType="nt:unstructured">
+            <master
+                jcr:mixinTypes="[cq:Taggable,dam:cfVariationNode]"
+                jcr:primaryType="nt:unstructured"
+                submenuFields="[/content/dam/NikeCMSAssignment/nike-header/en_US/top-menu/submenu/sale/sale-1,/content/dam/NikeCMSAssignment/nike-header/en_US/top-menu/submenu/sale/men-sale-1,/content/dam/NikeCMSAssignment/nike-header/en_US/top-menu/submenu/sale/women-sale-1,/content/dam/NikeCMSAssignment/nike-header/en_US/top-menu/submenu/sale/kids-sale-1]"
+                submenuFields_x0040_LastModified="{Date}2024-04-30T08:01:16.823+05:30"
+                topMenuFieldTitle="Sale"
+                topMenuFieldTitle_x0040_LastModified="{Date}2024-04-30T08:01:16.822+05:30"/>
+        </data>
+        <metadata
+            jcr:mixinTypes="[cq:Taggable]"
+            jcr:primaryType="nt:unstructured"/>
+        <related jcr:primaryType="nt:unstructured"/>
+    </jcr:content>
+</jcr:root>

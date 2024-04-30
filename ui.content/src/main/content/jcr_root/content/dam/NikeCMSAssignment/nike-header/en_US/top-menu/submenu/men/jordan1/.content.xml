@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:dam="http://www.day.com/dam/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:isCheckedOut="{Boolean}true"
+    jcr:mixinTypes="[mix:referenceable,mix:versionable]"
+    jcr:primaryType="dam:Asset"
+    jcr:uuid="aecd23d4-d763-42c1-8f93-99f813bc7abf">
+    <jcr:content
+        cq:name="jordan1"
+        cq:parentPath="/content/dam/NikeCMSAssignment/nike-header/en_US/top-menu/submenu/men"
+        jcr:lastModified="{Date}2024-04-30T07:26:52.220+05:30"
+        jcr:lastModifiedBy="admin"
+        jcr:primaryType="dam:AssetContent"
+        jcr:title="Jordan"
+        contentFragment="{Boolean}true"
+        lastFragmentSave="{Date}2024-04-30T07:26:52.220+05:30">
+        <data
+            cq:model="/conf/NikeCMSAssignment/settings/dam/cfm/models/submenu"
+            jcr:primaryType="nt:unstructured">
+            <master
+                jcr:mixinTypes="[cq:Taggable,dam:cfVariationNode]"
+                jcr:primaryType="nt:unstructured"
+                submenuFields="[/content/dam/NikeCMSAssignment/nike-header/en_US/top-menu/submenu/men/jordan/all-jordan,/content/dam/NikeCMSAssignment/nike-header/en_US/top-menu/submenu/men/jordan/jordan-shoes,/content/dam/NikeCMSAssignment/nike-header/en_US/top-menu/submenu/men/jordan/jordan-clothing,/content/dam/NikeCMSAssignment/nike-header/en_US/top-menu/submenu/men/jordan/new-jordan]"
+                submenuFields_x0040_LastModified="{Date}2024-04-30T07:26:52.206+05:30"
+                submenuTitle="Jordan"
+                submenuTitle_x0040_LastModified="{Date}2024-04-29T11:16:58.628+05:30"/>
+        </data>
+        <metadata
+            jcr:mixinTypes="[cq:Taggable]"
+            jcr:primaryType="nt:unstructured"/>
+        <related jcr:primaryType="nt:unstructured"/>
+    </jcr:content>
+</jcr:root>

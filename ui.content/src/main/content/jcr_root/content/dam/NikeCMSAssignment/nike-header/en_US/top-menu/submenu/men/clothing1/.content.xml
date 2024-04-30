@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:dam="http://www.day.com/dam/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:isCheckedOut="{Boolean}true"
+    jcr:mixinTypes="[mix:referenceable,mix:versionable]"
+    jcr:primaryType="dam:Asset"
+    jcr:uuid="75effcb3-abf3-4b3c-9c7a-9a96cb4bf000">
+    <jcr:content
+        cq:name="clothing1"
+        cq:parentPath="/content/dam/NikeCMSAssignment/nike-header/en_US/top-menu/submenu/men"
+        jcr:lastModified="{Date}2024-04-30T07:28:36.397+05:30"
+        jcr:lastModifiedBy="admin"
+        jcr:primaryType="dam:AssetContent"
+        jcr:title="Clothing"
+        contentFragment="{Boolean}true"
+        lastFragmentSave="{Date}2024-04-30T07:28:36.397+05:30">
+        <data
+            cq:model="/conf/NikeCMSAssignment/settings/dam/cfm/models/submenu"
+            jcr:primaryType="nt:unstructured">
+            <master
+                jcr:mixinTypes="[cq:Taggable,dam:cfVariationNode]"
+                jcr:primaryType="nt:unstructured"
+                submenuFields="[/content/dam/NikeCMSAssignment/nike-header/en_US/top-menu/submenu/men/clothing/all-clothing,/content/dam/NikeCMSAssignment/nike-header/en_US/top-menu/submenu/men/clothing/tops-and-t-shirts,/content/dam/NikeCMSAssignment/nike-header/en_US/top-menu/submenu/men/clothing/pants-and-leggings,/content/dam/NikeCMSAssignment/nike-header/en_US/top-menu/submenu/men/clothing/shorts]"
+                submenuFields_x0040_LastModified="{Date}2024-04-30T07:28:36.384+05:30"
+                submenuTitle="Clothing"
+                submenuTitle_x0040_LastModified="{Date}2024-04-29T11:15:53.828+05:30"/>
+        </data>
+        <metadata
+            jcr:mixinTypes="[cq:Taggable]"
+            jcr:primaryType="nt:unstructured"/>
+        <related jcr:primaryType="nt:unstructured"/>
+    </jcr:content>
+</jcr:root>

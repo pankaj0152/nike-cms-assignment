@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:dam="http://www.day.com/dam/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:isCheckedOut="{Boolean}true"
+    jcr:mixinTypes="[mix:referenceable,mix:versionable]"
+    jcr:primaryType="dam:Asset"
+    jcr:uuid="7bd4b62e-6b3b-4b56-80cf-c1cf0affca8f">
+    <jcr:content
+        cq:name="new-and-featured-topMenu"
+        cq:parentPath="/content/dam/NikeCMSAssignment/nike-header/en_US/top-menu"
+        jcr:lastModified="{Date}2024-04-30T08:47:14.289+05:30"
+        jcr:lastModifiedBy="admin"
+        jcr:primaryType="dam:AssetContent"
+        jcr:title="New and Featured"
+        contentFragment="{Boolean}true"
+        lastFragmentSave="{Date}2024-04-30T08:47:14.289+05:30">
+        <data
+            cq:model="/conf/NikeCMSAssignment/settings/dam/cfm/models/top-menu-fields"
+            jcr:primaryType="nt:unstructured">
+            <master
+                jcr:mixinTypes="[cq:Taggable,dam:cfVariationNode]"
+                jcr:primaryType="nt:unstructured"
+                submenuFields="[/content/dam/NikeCMSAssignment/nike-header/en_US/top-menu/submenu/new-and-featured-subitems/new-and-featured,/content/dam/NikeCMSAssignment/nike-header/en_US/top-menu/submenu/new-and-featured-subitems/new-for-men-1,/content/dam/NikeCMSAssignment/nike-header/en_US/top-menu/submenu/new-and-featured-subitems/new-for-women-1,/content/dam/NikeCMSAssignment/nike-header/en_US/top-menu/submenu/new-and-featured-subitems/new-for-kids-1,/content/dam/NikeCMSAssignment/nike-header/en_US/top-menu/submenu/new-and-featured-subitems/shop-icons-1]"
+                submenuFields_x0040_LastModified="{Date}2024-04-30T08:47:14.286+05:30"
+                topMenuFieldTitle="New and Featured"
+                topMenuFieldTitle_x0040_LastModified="{Date}2024-04-30T08:47:14.286+05:30"/>
+        </data>
+        <metadata
+            jcr:mixinTypes="[cq:Taggable]"
+            jcr:primaryType="nt:unstructured"/>
+        <related jcr:primaryType="nt:unstructured"/>
+    </jcr:content>
+</jcr:root>
