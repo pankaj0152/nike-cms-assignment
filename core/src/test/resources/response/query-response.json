@@ -1,0 +1,500 @@
+{
+  "data": {
+    "nikeHeaderList": {
+      "items": [
+        {
+          "_path": "/content/dam/NikeCMSAssignment/nike-header/en_US/nike-header",
+          "headerFields": [
+            {
+              "locale": "en_US",
+              "isoLanguageCode": "en",
+              "isoCountryCode": "US"
+            },
+            {
+              "topMenuFieldTitle": "New and Featured",
+              "submenuFields": [
+                {
+                  "submenuTitle": "New and Featured",
+                  "submenuFields": [
+                    {
+                      "linksTitle": "Latest Shoes"
+                    },
+                    {
+                      "linksTitle": "Latest Clothing"
+                    },
+                    {
+                      "linksTitle": "Best Sellers"
+                    },
+                    {
+                      "linksTitle": "Shop All New Arrivals"
+                    }
+                  ]
+                },
+                {
+                  "submenuTitle": "New For Men",
+                  "submenuFields": [
+                    {
+                      "linksTitle": "shoes"
+                    },
+                    {
+                      "linksTitle": "Clothing"
+                    },
+                    {
+                      "linksTitle": "Accesssories"
+                    },
+                    {
+                      "linksTitle": "Shop All New "
+                    }
+                  ]
+                },
+                {
+                  "submenuTitle": "New For Women",
+                  "submenuFields": [
+                    {
+                      "linksTitle": "shoes"
+                    },
+                    {
+                      "linksTitle": "Clothing"
+                    },
+                    {
+                      "linksTitle": "Accesssories"
+                    },
+                    {
+                      "linksTitle": "Shop All New "
+                    }
+                  ]
+                },
+                {
+                  "submenuTitle": "New For Kids",
+                  "submenuFields": [
+                    {
+                      "linksTitle": "shoes"
+                    },
+                    {
+                      "linksTitle": "Clothing"
+                    },
+                    {
+                      "linksTitle": "Accesssories"
+                    },
+                    {
+                      "linksTitle": "Shop All New "
+                    }
+                  ]
+                },
+                {
+                  "submenuTitle": "Shop Icons",
+                  "submenuFields": [
+                    {
+                      "linksTitle": "Air Force 1"
+                    },
+                    {
+                      "linksTitle": "Air Jordan 1"
+                    },
+                    {
+                      "linksTitle": "Air Max"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "topMenuFieldTitle": "Men",
+              "submenuFields": [
+                {
+                  "submenuTitle": "Featured",
+                  "submenuFields": [
+                    {
+                      "linksTitle": "New Releases"
+                    },
+                    {
+                      "linksTitle": "Best Sellers"
+                    },
+                    {
+                      "linksTitle": "Retro Running"
+                    }
+                  ]
+                },
+                {
+                  "submenuTitle": "Shoes",
+                  "submenuFields": [
+                    {
+                      "linksTitle": "All Shoes"
+                    },
+                    {
+                      "linksTitle": "Jordan"
+                    },
+                    {
+                      "linksTitle": "Lifestyle"
+                    },
+                    {
+                      "linksTitle": "Newest Sneakers"
+                    },
+                    {
+                      "linksTitle": "Running"
+                    }
+                  ]
+                },
+                {
+                  "submenuTitle": "Clothing",
+                  "submenuFields": [
+                    {
+                      "linksTitle": "All Clothing"
+                    },
+                    {
+                      "linksTitle": "Tops and T-Shirts"
+                    },
+                    {
+                      "linksTitle": "Pants and Leggings"
+                    },
+                    {
+                      "linksTitle": "Shorts"
+                    }
+                  ]
+                },
+                {
+                  "submenuTitle": "Jordan",
+                  "submenuFields": [
+                    {
+                      "linksTitle": "All Jordan"
+                    },
+                    {
+                      "linksTitle": "Jordan Shoes"
+                    },
+                    {
+                      "linksTitle": "Jordan Clothing"
+                    },
+                    {
+                      "linksTitle": "New Jordan"
+                    }
+                  ]
+                },
+                {
+                  "submenuTitle": "Shop By Sports",
+                  "submenuFields": [
+                    {
+                      "linksTitle": "Baskeball"
+                    },
+                    {
+                      "linksTitle": "Football"
+                    },
+                    {
+                      "linksTitle": "Running"
+                    },
+                    {
+                      "linksTitle": "Golf"
+                    },
+                    {
+                      "linksTitle": "Tennis"
+                    }
+                  ]
+                },
+                {
+                  "submenuTitle": "Shop by Brands",
+                  "submenuFields": [
+                    {
+                      "linksTitle": "Nike Sportswear"
+                    },
+                    {
+                      "linksTitle": "Jordan"
+                    },
+                    {
+                      "linksTitle": "Nikelab"
+                    },
+                    {
+                      "linksTitle": "Nike By You"
+                    },
+                    {
+                      "linksTitle": "NBA"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "topMenuFieldTitle": "Women",
+              "submenuFields": [
+                {
+                  "submenuTitle": "Featured",
+                  "submenuFields": [
+                    {
+                      "linksTitle": "New Releases"
+                    },
+                    {
+                      "linksTitle": "Best Sellers"
+                    },
+                    {
+                      "linksTitle": "Retro Running"
+                    }
+                  ]
+                },
+                {
+                  "submenuTitle": "Shoes",
+                  "submenuFields": [
+                    {
+                      "linksTitle": "All Shoes"
+                    },
+                    {
+                      "linksTitle": "Jordan"
+                    },
+                    {
+                      "linksTitle": "Lifestyle"
+                    },
+                    {
+                      "linksTitle": "Newest Sneakers"
+                    },
+                    {
+                      "linksTitle": "Running"
+                    }
+                  ]
+                },
+                {
+                  "submenuTitle": "Clothing",
+                  "submenuFields": [
+                    {
+                      "linksTitle": "All Clothing"
+                    },
+                    {
+                      "linksTitle": "Tops and T-Shirts"
+                    },
+                    {
+                      "linksTitle": "Pants and Leggings"
+                    },
+                    {
+                      "linksTitle": "Shorts"
+                    }
+                  ]
+                },
+                {
+                  "submenuTitle": "Shop By Sports",
+                  "submenuFields": [
+                    {
+                      "linksTitle": "Baskeball"
+                    },
+                    {
+                      "linksTitle": "Football"
+                    },
+                    {
+                      "linksTitle": "Running"
+                    },
+                    {
+                      "linksTitle": "Golf"
+                    },
+                    {
+                      "linksTitle": "Tennis"
+                    }
+                  ]
+                },
+                {
+                  "submenuTitle": "Shop by Brands",
+                  "submenuFields": [
+                    {
+                      "linksTitle": "Nike Sportswear"
+                    },
+                    {
+                      "linksTitle": "Jordan"
+                    },
+                    {
+                      "linksTitle": "Nikelab"
+                    },
+                    {
+                      "linksTitle": "Nike By You"
+                    },
+                    {
+                      "linksTitle": "NBA"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "topMenuFieldTitle": "Kids",
+              "submenuFields": [
+                {
+                  "submenuTitle": "Featured",
+                  "submenuFields": [
+                    {
+                      "linksTitle": "New Releases"
+                    },
+                    {
+                      "linksTitle": "Best Sellers"
+                    },
+                    {
+                      "linksTitle": "Retro Running"
+                    }
+                  ]
+                },
+                {
+                  "submenuTitle": "Boys' Shoes",
+                  "submenuFields": [
+                    {
+                      "linksTitle": "All Shoes"
+                    },
+                    {
+                      "linksTitle": "Jordan"
+                    },
+                    {
+                      "linksTitle": "Older Boys (7-14 years)"
+                    },
+                    {
+                      "linksTitle": "Younger Boys"
+                    },
+                    {
+                      "linksTitle": "Lifestyle"
+                    },
+                    {
+                      "linksTitle": "Newest Sneakers"
+                    },
+                    {
+                      "linksTitle": "Running"
+                    }
+                  ]
+                },
+                {
+                  "submenuTitle": "Boys' Clothing",
+                  "submenuFields": [
+                    {
+                      "linksTitle": "Older Boys (7-14 years)"
+                    },
+                    {
+                      "linksTitle": "Younger Boys"
+                    },
+                    {
+                      "linksTitle": "Tops and T-Shirts"
+                    },
+                    {
+                      "linksTitle": "Pants and Leggings"
+                    },
+                    {
+                      "linksTitle": "Shorts"
+                    }
+                  ]
+                },
+                {
+                  "submenuTitle": "Girls' Shoes",
+                  "submenuFields": [
+                    {
+                      "linksTitle": "All Shoes"
+                    },
+                    {
+                      "linksTitle": "Older Girls"
+                    },
+                    {
+                      "linksTitle": "Younger Girls (4-7 years)"
+                    },
+                    {
+                      "linksTitle": "Jordan"
+                    },
+                    {
+                      "linksTitle": "Lifestyle"
+                    },
+                    {
+                      "linksTitle": "Newest Sneakers"
+                    },
+                    {
+                      "linksTitle": "Running"
+                    }
+                  ]
+                },
+                {
+                  "submenuTitle": "Girls Clothing",
+                  "submenuFields": [
+                    {
+                      "linksTitle": "Older Girls"
+                    },
+                    {
+                      "linksTitle": "Younger Girls (4-7 years)"
+                    },
+                    {
+                      "linksTitle": "Tops and T-Shirts"
+                    },
+                    {
+                      "linksTitle": "Pants and Leggings"
+                    },
+                    {
+                      "linksTitle": "Shorts"
+                    }
+                  ]
+                },
+                {
+                  "submenuTitle": "Shop By Sports",
+                  "submenuFields": [
+                    {
+                      "linksTitle": "Baskeball"
+                    },
+                    {
+                      "linksTitle": "Football"
+                    },
+                    {
+                      "linksTitle": "Running"
+                    },
+                    {
+                      "linksTitle": "Golf"
+                    },
+                    {
+                      "linksTitle": "Tennis"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "topMenuFieldTitle": "Sale",
+              "submenuFields": [
+                {
+                  "submenuTitle": "Sale",
+                  "submenuFields": [
+                    {
+                      "linksTitle": "Shop All Sale"
+                    },
+                    {
+                      "linksTitle": "Shoes Sale"
+                    },
+                    {
+                      "linksTitle": "Clothing Sale"
+                    },
+                    {
+                      "linksTitle": "Accessories and Equipment Sale"
+                    }
+                  ]
+                },
+                {
+                  "submenuTitle": "Men Sale",
+                  "submenuFields": [
+                    {
+                      "linksTitle": "Shoes Sale"
+                    },
+                    {
+                      "linksTitle": "Clothing Sale"
+                    }
+                  ]
+                },
+                {
+                  "submenuTitle": "Women Sale",
+                  "submenuFields": [
+                    {
+                      "linksTitle": "Shoes Sale"
+                    },
+                    {
+                      "linksTitle": "Clothing Sale"
+                    }
+                  ]
+                },
+                {
+                  "submenuTitle": "Kids Sale",
+                  "submenuFields": [
+                    {
+                      "linksTitle": "Shoes Sale"
+                    },
+                    {
+                      "linksTitle": "Clothing Sale"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

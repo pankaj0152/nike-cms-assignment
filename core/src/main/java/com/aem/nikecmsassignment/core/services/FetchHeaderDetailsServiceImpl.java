@@ -68,19 +68,32 @@ public class FetchHeaderDetailsServiceImpl implements FetchHeaderDetailsService 
     }
 
     private String addLocalesInfo(JsonElement responseElement) {
+        if (responseElement instanceof JsonObject) {
             JsonObject responseObject = responseElement.getAsJsonObject();
-            JsonObject dataObject = responseObject.getAsJsonObject("data");
-            JsonObject nikeHeaderListObject = dataObject.getAsJsonObject("nikeHeaderList");
-            JsonArray itemsArray = nikeHeaderListObject.getAsJsonArray("items");
+            if(responseObject.has("data")){
+                JsonObject dataObject = responseObject.getAsJsonObject("data");
+                if(dataObject.has("nikeHeaderList")){
+                    JsonObject nikeHeaderListObject = dataObject.getAsJsonObject("nikeHeaderList");
+                    if(nikeHeaderListObject.has("items")){
+                        JsonArray itemsArray = nikeHeaderListObject.getAsJsonArray("items");
+                        String locale = extractLocale(itemsArray);
+                       if(StringUtils.isNotEmpty(locale)) {
 
-            String locale = extractLocale(itemsArray);
-            String isoLanguageCode = locale.split("_")[0];
-            String isoCountryCode = locale.split("_")[1];
+                           String[] localeParts = locale.split("_");
+                           if (localeParts.length >= 2) {
+                               String isoLanguageCode = localeParts[0];
+                               String isoCountryCode = localeParts[1];
+                               addLocaleInfoToHeaderFields(itemsArray, locale, isoLanguageCode, isoCountryCode);
+                               return responseObject.toString();
+                           }
+                       }
+                    }
+                }
+            }
+        }
+           return responseElement.toString();
+        }
 
-            addLocaleInfoToHeaderFields(itemsArray, locale, isoLanguageCode, isoCountryCode);
-
-            return responseObject.toString();
-    }
 
     private String extractLocale(JsonArray itemsArray) {
         JsonObject pathObject = itemsArray.get(0).getAsJsonObject();

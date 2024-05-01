@@ -1,0 +1,16 @@
+{
+  nikeHeaderList {
+    items {
+      _path
+      headerFields {
+        topMenuFieldTitle
+        submenuFields {
+          submenuTitle
+          submenuFields {
+            linksTitle
+          }
+        }
+      }
+    }
+  }
+}

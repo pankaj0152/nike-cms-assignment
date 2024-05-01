@@ -1,37 +1,45 @@
 package com.aem.nikecmsassignment.core.servlets;
 
-import io.wcm.testing.mock.aem.junit5.AemContext;
+import com.aem.nikecmsassignment.core.services.FetchHeaderDetailsServiceImpl;
 import io.wcm.testing.mock.aem.junit5.AemContextExtension;
-import org.apache.sling.testing.mock.sling.servlet.MockSlingHttpServletRequest;
-import org.apache.sling.testing.mock.sling.servlet.MockSlingHttpServletResponse;
-import org.junit.jupiter.api.BeforeEach;
+import org.apache.sling.api.SlingHttpServletRequest;
+import org.apache.sling.api.SlingHttpServletResponse;
+import org.apache.sling.api.resource.ResourceResolver;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.junit.jupiter.MockitoExtension;
 
-import static org.junit.jupiter.api.Assertions.*;
 
-@ExtendWith(AemContextExtension.class)
+import java.io.*;
+import static org.mockito.Mockito.*;
+
+@ExtendWith({AemContextExtension.class, MockitoExtension.class})
 class FetchHeaderDetailsServletTest {
-
-    AemContext aemContext = new AemContext();
 
     @InjectMocks
     private FetchHeaderDetailsServlet fetchHeaderDetailsServlet;
+    @Mock
+    private SlingHttpServletRequest request;
 
-    MockSlingHttpServletRequest request;
+    @Mock
+    private SlingHttpServletResponse response;
 
-    MockSlingHttpServletResponse response;
+    @Mock
+    private PrintWriter printWriter;
 
+    @Mock
+    FetchHeaderDetailsServiceImpl fetchHeaderDetailsService;
 
-    @BeforeEach
-    void setUp() {
-    request = aemContext.request();
-    response = aemContext.response();
-    }
+    @Mock
+    private ResourceResolver resourceResolver;
 
     @Test
-    void doGet() {
+    void doGet() throws IOException {
+        when(request.getResourceResolver()).thenReturn(resourceResolver);
+        when(fetchHeaderDetailsService.getHeaderData(resourceResolver)).thenReturn("Header Details");
+        when(response.getWriter()).thenReturn(printWriter);
         fetchHeaderDetailsServlet.doGet(request,response);
     }
 }

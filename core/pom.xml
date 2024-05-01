@@ -203,6 +203,11 @@ Import-Package: javax.annotation;version=0.0.0,*
             </exclusions>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <scope>test</scope>
+        </dependency>
 
         <!-- GraphQL Query Executor -->
         <dependency>
